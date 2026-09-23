@@ -235,6 +235,41 @@ curl http://localhost:9000/health
 
 ---
 
+## AI-assisted setup
+
+Auto-Runner includes an [`AGENTS.md`](AGENTS.md) file — a structured guide that lets any AI assistant install and configure it on your server with minimal input from you.
+
+### How it works
+
+Share the `AGENTS.md` file (or just the repo link) with your AI tool and say something like:
+
+> *"Install this on my server"*
+> *"Set up Auto-Runner for me"*
+
+The AI will:
+1. **Ask you** for your server's IP, SSH credentials, and which repos to watch
+2. **SSH into your server** and discover existing runner services automatically
+3. **Generate** a secure webhook secret (or use one you provide)
+4. **Write** the config file, install the service, and open the firewall port
+5. **Register** GitHub webhooks for each repo
+6. **Verify** everything works with a health check
+
+No copy-pasting commands, no reading docs — the AI handles the entire setup end to end.
+
+### Example prompts
+
+```
+"Install Auto-Runner on my server. AGENTS.md: https://github.com/gokturksigirtmac/Auto-Runner/blob/main/AGENTS.md"
+```
+
+```
+"Bunu sunucuma kur: https://github.com/gokturksigirtmac/Auto-Runner"
+```
+
+The `AGENTS.md` file works with Claude, ChatGPT, Copilot, Gemini, and any other AI assistant that can read a URL or a pasted document.
+
+---
+
 ## License
 
 MIT
