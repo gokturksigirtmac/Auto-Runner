@@ -1,0 +1,29 @@
+{
+  "_comment": "Copy this file to /etc/github-runner-autoscaler/config.json and edit it.",
+
+  "port": 9000,
+  "webhook_secret": "your-webhook-secret-here",
+  "grace_seconds": 30,
+
+  "runners": [
+    {
+      "_comment": "Basic example: one repo → one systemd service",
+      "repo": "your-org/your-repo",
+      "service": "actions.runner.your-org-your-repo.runner-name",
+      "grace_seconds": 30
+    },
+    {
+      "_comment": "Multiple repos sharing one runner",
+      "repos": ["your-org/repo-a", "your-org/repo-b"],
+      "service": "actions.runner.your-org-repo-a.shared-runner",
+      "grace_seconds": 60
+    },
+    {
+      "_comment": "Custom start/stop commands (Docker, cloud VMs, custom scripts…)",
+      "repo": "your-org/another-repo",
+      "start_command": "docker start my-github-runner",
+      "stop_command": "docker stop my-github-runner",
+      "grace_seconds": 120
+    }
+  ]
+}

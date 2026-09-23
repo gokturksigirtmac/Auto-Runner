@@ -1,0 +1,18 @@
+[Unit]
+Description=GitHub Runner Autoscaler
+Documentation=https://github.com/gokturksigirtmac/github-runner-autoscaler
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/python3 /opt/github-runner-autoscaler/autoscaler.py
+Environment="CONFIG_FILE=/etc/github-runner-autoscaler/config.json"
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=runner-autoscaler
+
+[Install]
+WantedBy=multi-user.target
