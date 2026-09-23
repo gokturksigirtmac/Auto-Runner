@@ -36,13 +36,13 @@ Push to repo
 ## Quick install
 
 ```bash
-sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/gokturksigirtmac/github-runner-autoscaler/main/install.sh)"
+sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/gokturksigirtmac/Auto-Runner/main/install.sh)"
 ```
 
 Then edit the config and start the service:
 
 ```bash
-nano /etc/github-runner-autoscaler/config.json
+nano /etc/Auto-Runner/config.json
 systemctl start runner-autoscaler
 ```
 
@@ -52,13 +52,13 @@ systemctl start runner-autoscaler
 
 ```bash
 # 1. Copy files
-sudo mkdir -p /opt/github-runner-autoscaler /etc/github-runner-autoscaler
-sudo cp autoscaler.py /opt/github-runner-autoscaler/
-sudo cp config.example.json /etc/github-runner-autoscaler/config.json
+sudo mkdir -p /opt/Auto-Runner /etc/Auto-Runner
+sudo cp autoscaler.py /opt/Auto-Runner/
+sudo cp config.example.json /etc/Auto-Runner/config.json
 sudo cp runner-autoscaler.service /etc/systemd/system/
 
 # 2. Edit config
-sudo nano /etc/github-runner-autoscaler/config.json
+sudo nano /etc/Auto-Runner/config.json
 
 # 3. Enable and start
 sudo systemctl daemon-reload
@@ -72,7 +72,7 @@ journalctl -fu runner-autoscaler
 
 ## Configuration
 
-`/etc/github-runner-autoscaler/config.json`:
+`/etc/Auto-Runner/config.json`:
 
 ```json
 {

@@ -1,13 +1,13 @@
 [Unit]
 Description=GitHub Runner Autoscaler
-Documentation=https://github.com/gokturksigirtmac/github-runner-autoscaler
+Documentation=https://github.com/gokturksigirtmac/Auto-Runner
 After=network.target
 
 [Service]
 Type=simple
 User=root
-ExecStart=/usr/bin/python3 /opt/github-runner-autoscaler/autoscaler.py
-Environment="CONFIG_FILE=/etc/github-runner-autoscaler/config.json"
+ExecStart=/usr/bin/python3 /opt/Auto-Runner/autoscaler.py
+Environment="CONFIG_FILE=/etc/Auto-Runner/config.json"
 Restart=always
 RestartSec=5
 StandardOutput=journal

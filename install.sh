@@ -3,10 +3,10 @@
 # Usage: sudo bash install.sh
 set -euo pipefail
 
-INSTALL_DIR="/opt/github-runner-autoscaler"
-CONFIG_DIR="/etc/github-runner-autoscaler"
+INSTALL_DIR="/opt/Auto-Runner"
+CONFIG_DIR="/etc/Auto-Runner"
 SERVICE_FILE="/etc/systemd/system/runner-autoscaler.service"
-REPO_URL="https://raw.githubusercontent.com/gokturksigirtmac/github-runner-autoscaler/main"
+REPO_URL="https://raw.githubusercontent.com/gokturksigirtmac/Auto-Runner/main"
 
 # ── helpers ────────────────────────────────────────────────────────────────
 green()  { echo -e "\033[0;32m$*\033[0m"; }

@@ -5,7 +5,7 @@ GitHub Runner Autoscaler
 Starts self-hosted runners on workflow_job.queued,
 stops them after a grace period once the job completes.
 
-Config: /etc/github-runner-autoscaler/config.json (or CONFIG_FILE env var)
+Config: /etc/Auto-Runner/config.json (or CONFIG_FILE env var)
 """
 
 import hashlib
@@ -45,7 +45,7 @@ DEFAULT_CONFIG = {
 
 def load_config() -> dict:
     path = os.environ.get(
-        "CONFIG_FILE", "/etc/github-runner-autoscaler/config.json"
+        "CONFIG_FILE", "/etc/Auto-Runner/config.json"
     )
     try:
         with open(path) as f:
